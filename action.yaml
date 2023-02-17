@@ -4,8 +4,8 @@ inputs:
   project_number:  # id of input
     description: 'Project V2 Number'
     required: true
-  issue_number:
-    description: "Number of Issue"
+  issue_id:
+    description: "ID of Issue"
     required: true
   status_field:
     description: Status Field Name

@@ -1,0 +1,24 @@
+name: 'ProjectV2 Automation Plus'
+description: 'A Simple Automation that Move Issue Between Columns'
+inputs:
+  project_number:  # id of input
+    description: 'Project V2 Number'
+    required: true
+  issue_number:
+    description: "Number of Issue"
+    required: true
+  status_field:
+    description: Status Field Name
+    required: true
+  status_value:
+    description: Status Field Name
+    required: true
+  token:
+    description: Status Field Name
+    required: true
+  org:
+    description: Status Field Name
+    required: true
+runs:
+  using: 'node16'
+  main: 'index.js'

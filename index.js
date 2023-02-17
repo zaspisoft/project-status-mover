@@ -7,7 +7,7 @@ try {
    */
   const projectNumber = core.getInput("project_number");
   const organization = core.getInput("org");
-  const issue_number = core.getInput("issue_number");
+  const issue_id = core.getInput("issue_id");
   const status_field = core.getInput("status_field");
   const status_value = core.getInput("status_value");
   const pat = core.getInput("token");

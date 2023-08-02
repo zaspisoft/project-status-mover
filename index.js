@@ -132,7 +132,6 @@ try {
 
 	const allProjectItems = await getAllProjectItems(project_id, graphqlWithAuth)
 
-	console.log(allProjectItems)
 	const itemId = allProjectItems.filter(each => each.content.databaseId == issue_id)[0].id
 	
 

@@ -40,7 +40,6 @@ const getAllProjectItems = async (project_id, graphqlWithAuth) => {
 	while(true) {
 
 		const projectQueryItems = await graphqlWithAuth(projectItemsQuery(project_id, nextCursor))
-		console.log(projectQueryItems.node.items.pageInfo.hasNextPage)
 		payloads = [...payloads, ...projectQueryItems.node.items.nodes]
 		nextCursor = projectQueryItems.node.items.pageInfo.endCursor
 		if (!projectQueryItems.node.items.pageInfo.hasNextPage) {
@@ -133,7 +132,8 @@ try {
 
 	const allProjectItems = await getAllProjectItems(project_id, graphqlWithAuth)
 
-	const itemId = allProjectItems.node.items.nodes.filter(each => each.content.databaseId == issue_id)[0].id
+	console.log(allProjectItems)
+	const itemId = allProjectItems.filter(each => each.content.databaseId == issue_id)[0].id
 	
 
 	// Change the Status

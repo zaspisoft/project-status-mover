@@ -82,7 +82,10 @@ try {
 	const allProjectItems = await graphqlWithAuth(`
 	query{ node(id: "${project_id}") {
   ... on ProjectV2 { 
-    items(first: 20) {
+    items(first: 100, orderBy: {
+      field: POSITION,
+      direction:DESC
+    })) {
       nodes{
         id 
         
